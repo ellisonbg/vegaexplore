@@ -1,0 +1,50 @@
+{
+  "name": "vegaexplore",
+  "version": "0.0.1",
+  "description": "Exploring Python APIs for vega-lite",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"tests are nice but I don't have any yet, sorry :)\"",
+    "prepublish": "npm run build",
+    "prebuild": "rimraf ./lib && mkdirp ./lib && rimraf ./lib-browser && mkdirp ./lib-browser",
+    "build": "npm run build:es5 && npm run build:browser",
+    "build:es5": "babel src/ --out-dir lib/ --source-maps",
+    "build:browser": "browserify lib/index.js --outfile lib-browser/vegaexplore.js --standalone vegaExplorer --debug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ellisonbg/vegaexplore.git"
+  },
+  "keywords": [
+    "visualiation",
+    "python",
+    "javascript",
+    "jupyter"
+  ],
+  "author": "Brian E. Granger",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/ellisonbg/vegaexplore/issues"
+  },
+  "homepage": "https://github.com/ellisonbg/vegaexplore#readme",
+  "dependencies": {
+    "browserify-shim": "^3.8.10",
+    "browserify-versionify": "^1.0.6",
+    "jstransform": "^11.0.3",
+    "through": "^2.3.8",
+    "vega": "^2.2.4",
+    "vega-lite": "^0.7.15"
+  },
+  "browserify-shim": {
+    "d3": "global:d3",
+    "d3.layout.cloud": "global:d3.layout.cloud",
+    "canvas": "global:canvas",
+    "topojson": "global:topojson"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "browserify": "^11.1.0",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.4.3"
+  }
+}

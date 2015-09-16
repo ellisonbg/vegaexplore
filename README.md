@@ -1,2 +1,6 @@
 # vegaexplore
-High level visualizations using Python and vega-lite
+
+Exploring Python APIs for vega-lite.
+
+
+

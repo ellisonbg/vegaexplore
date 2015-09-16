@@ -55,3 +55,9 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# node
+lib/
+lib-browser/
+node_modules/
+
